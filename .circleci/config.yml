@@ -1,0 +1,42 @@
+version: 2.1
+orbs:
+  slack: circleci/slack@4.4.2
+jobs:
+  docker-build:
+    docker:
+      # DLC does nothing here, its caching depends on commonality of the image layers.
+      - image: circleci/node:9.8.0-stretch-browsers
+        auth:
+          username: $DOCKER_USER
+          password: $DOCKER_PASS
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Publish Docker Image to Docker Hub
+          command: |
+            docker logout
+            echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+            docker build --add-host=jamesk-kubernetes-master:127.0.0.1 -t jkieley/tsis-scheduler:latest .
+            docker push jkieley/tsis-scheduler:latest
+
+  complete-build:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: basic_success_1
+workflows:
+  deployer:
+    jobs:
+      - docker-build:
+          context: docker-secrets
+      - complete-build:
+          context: slack-secrets
+          requires:
+            - docker-build

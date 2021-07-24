@@ -1,0 +1,1 @@
+install kubectl on circleci ubuntu 32 bit

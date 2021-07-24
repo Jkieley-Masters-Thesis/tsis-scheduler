@@ -1,0 +1,38 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: outbound-model-pipeline-arpu-train
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: outbound-model
+          image: jkieley/scaling-overflower-experiment-scheduling-ml-workload-outbound_model_12_pipeline_arpu_train:latest
+          env:
+            - name: INPUT_CSV_FILE_PATH_1
+              value: {{inputFileName1}}
+            - name: OUTPUT_MODEL_FOLDER_PATH
+              value: /app/mnt
+            - name: OUTPUT_FILE_SUFFIX
+              value: {{runId}}
+          volumeMounts:
+            - name: test-volume
+              mountPath: "/app/mnt"
+          resources:
+            limits:
+              memory: "2100Mi"
+              cpu: "2"
+            requests:
+              memory: "2100Mi"
+              cpu: "2"
+      restartPolicy: Never
+      volumes:
+        - name: test-volume
+          hostPath:
+            path: /to-mount-data-dir
+            type: Directory
+        - name: output-volume
+          emptyDir: { }
+  backoffLimit: 4

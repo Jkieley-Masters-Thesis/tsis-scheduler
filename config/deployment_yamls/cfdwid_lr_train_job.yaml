@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cfdwid-lr-train
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: cfdwid-lr-train
+          image: jkieley/cfdwid_lr_train:latest
+          env:
+            - name: INPUT_CSV_FILE_PATH
+              value: {{inputFileName1}}
+            - name: OUTPUT_MODEL_FOLDER_PATH
+              value: /app/mnt
+            - name: OUTPUT_FILE_SUFFIX
+              value: {{runId}}
+          volumeMounts:
+            - mountPath: /app/mnt
+              name: test-volume
+          resources:
+            limits:
+              memory: "2500Mi"
+              cpu: "2"
+            requests:
+              memory: "2500Mi"
+              cpu: "2"
+      volumes:
+        - name: test-volume
+          hostPath:
+            path: /to-mount-data-dir
+            type: Directory
+      restartPolicy: Never
+  backoffLimit: 1

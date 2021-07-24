@@ -1,0 +1,19 @@
+#!/bin/bash
+
+curl 'https://circleci.com/api/v1.1/project/bitbucket/jkieley1/tsis-orchestrator/109/output/101/0?file=true&allocation-id=60c915775317e9664898e431-0-build%2F21F5F7A8' \
+  -o /Users/James.Kieley/git/tsis-scheduler/scheduler-output-logs.txt \
+  -H 'Connection: keep-alive' \
+  -H 'Cache-Control: max-age=0' \
+  -H 'sec-ch-ua: "Chromium";v="91", " Not;A Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'Upgrade-Insecure-Requests: 1' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36' \
+  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'Sec-Fetch-Site: same-site' \
+  -H 'Sec-Fetch-Mode: navigate' \
+  -H 'Sec-Fetch-User: ?1' \
+  -H 'Sec-Fetch-Dest: document' \
+  -H 'Referer: https://app.circleci.com/' \
+  -H 'Accept-Language: en-US,en;q=0.9' \
+  -H 'Cookie: CookieConsent={stamp:%27-1%27%2Cnecessary:true%2Cpreferences:true%2Cstatistics:true%2Cmarketing:true%2Cver:1%2Cutc:1622606975019%2Cregion:%27US-06%27}; optimizelyEndUserId=oeu1622606976154r0.9458236733548897; analytics-client-id=1622606976373; initial_referrer=https://www.google.com/; _gcl_au=1.1.1769619148.1622606977; ajs_anonymous_id=%2280b57b0b-3a3c-4a43-8e3c-ebd7e446c1af%22; _ga=GA1.2.1084286419.1622606977; _mkto_trk=id:485-ZMH-626&token:_mch-circleci.com-1622606979137-59624; _hjid=150662d1-791d-4ba7-ba68-f8c276837f67; drift_aid=5c42a801-5c6d-4160-8d48-d1b689f6b9d6; driftt_aid=5c42a801-5c6d-4160-8d48-d1b689f6b9d6; ajs_user_id=%229a2faf93-4942-4d6f-9cf8-1f55297db381%22; cci-customer=true; _hjDonePolls=409281; utm_term=dynamicSearch-; current_referrer=https://www.google.com/; _gac_UA-25580673-4=1.1623047414.Cj0KCQjw5PGFBhC2ARIsAIFIMNfsigM_c5gtyB60RDS1XT4A6RHrFAyER1PwpitgSYb8S1y7U5hXnbMaAphFEALw_wcB; amplitude_idundefinedcircleci.com=eyJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOm51bGwsImxhc3RFdmVudFRpbWUiOm51bGwsImV2ZW50SWQiOjAsImlkZW50aWZ5SWQiOjAsInNlcXVlbmNlTnVtYmVyIjowfQ==; _hjTLDTest=1; _hjCachedUserAttributes={"attributes":{},"userId":"9a2faf93-4942-4d6f-9cf8-1f55297db381"}; _gid=GA1.2.763030318.1623646743; gclid=CjwKCAjw_JuGBhBkEiwA1xmbRT3exEwt-9SLYt6tMdGHfVZoJFXuqGakP4SdgdGdN7vYtuHOq7gKVBoCLcAQAvD_BwE; utm_source=gb; utm_medium=SEM; utm_content=SEM-gb-Ld-uscan-Legacy; utm_campaign=SEM-gb-Ld-uscan; _gcl_aw=GCL.1623728574.CjwKCAjw_JuGBhBkEiwA1xmbRT3exEwt-9SLYt6tMdGHfVZoJFXuqGakP4SdgdGdN7vYtuHOq7gKVBoCLcAQAvD_BwE; _gac_UA-25580673-8=1.1623728574.CjwKCAjw_JuGBhBkEiwA1xmbRT3exEwt-9SLYt6tMdGHfVZoJFXuqGakP4SdgdGdN7vYtuHOq7gKVBoCLcAQAvD_BwE; _gac_UA-25580673-1=1.1623728574.CjwKCAjw_JuGBhBkEiwA1xmbRT3exEwt-9SLYt6tMdGHfVZoJFXuqGakP4SdgdGdN7vYtuHOq7gKVBoCLcAQAvD_BwE; _uetsid=3cee7b20cccd11eb8c76f5c92ce39d01; _uetvid=58eb3a20c35811ebb5cf05b0fb6b6d39; _hjAbsoluteSessionInProgress=0; ring-session=BF22zm%2BPkkAitMLfgGhZaAhx90HZE31Hi6tG6YCcsmVw%2FtmwLER43HSmayI06LD45PcVDyHke7JGke8lqBqeMlcbUVP7pjqGeeoCSAeklFz1APas1RX0OH2OTnTvKjB4Xy7r1s2e1AvnIoJA0M8aTtFwV13g%2B3OylJEq9gA8GqdsreboaU9poOlAMjuhvxASi43wfAtGqipHTCvbdnNwjHI8cRN5aiIyrruz68WoqnZk%2B3FeGnq1hjuZiAEAcFGLNSHWsqQ%2BE1DHtnN7bVEevGShhyINxIbHoNnrWQCzSa5EdaY4oUkWf56BLxwiDLMl--tN57HAEuAFvWo8MlYdbru%2BtHLjZgjTwzovL7f8QTVhw%3D; amplitude_id_645bd081fbbf8d3dadf6ac674cc29e67circleci.com=eyJkZXZpY2VJZCI6IjJkODAxNzAwLWU5YTUtNDA0ZS05NDQ1LTM4N2JiNjk3ZDg0N1IiLCJ1c2VySWQiOiI5YTJmYWY5My00OTQyLTRkNmYtOWNmOC0xZjU1Mjk3ZGIzODEiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE2MjM3OTU3OTkyNzgsImxhc3RFdmVudFRpbWUiOjE2MjM3OTU4MDEyNjgsImV2ZW50SWQiOjUzNjQsImlkZW50aWZ5SWQiOjE0MDQsInNlcXVlbmNlTnVtYmVyIjo2NzY4fQ==' \
+  --compressed
